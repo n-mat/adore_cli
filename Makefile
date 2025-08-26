@@ -10,8 +10,8 @@ SOURCE_DIRECTORY:=${ROOT_DIR}
 ADORE_CLI_WORKING_DIRECTORY:=${ROOT_DIR}
 CATKIN_WORKSPACE_DIRECTORY:=${SOURCE_DIRECTORY}/catkin_workspace
 
-ROS_DISTRO:=jazzy
-OS_CODE_NAME:=noble
+ROS_DISTRO:=humble
+OS_CODE_NAME:=jammy
 
 include ${ROOT_DIR}/adore_cli.mk
 include ${ADORE_CLI_MAKEFILE_PATH}/ci_teststand/ci_teststand.mk
