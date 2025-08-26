@@ -38,8 +38,12 @@ RUN chown -R ${UID}:${GID} $$HOME | true
 
 ARG ZSH_CUSTOM=/home/${USER}/.oh-my-zsh/custom
 
+RUN wget https://github.com/mikefarah/yq/releases/download/v4.2.0/yq_linux_arm64 -O /usr/local/bin/yq 
+RUN chmod +x /usr/local/bin/yq
+
 USER ${USER}
 WORKDIR /home/${USER}
+
 RUN zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
