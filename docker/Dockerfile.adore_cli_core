@@ -27,9 +27,9 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 
 COPY docker/files/${PYTHON_REQUIREMENTS_FILE} /tmp
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python3 -m pip install --break-system-packages -r ${PYTHON_REQUIREMENTS_FILE}
+    python3 -m pip install -r ${PYTHON_REQUIREMENTS_FILE}
 
-
+RUN useradd -m ubuntu
 RUN userdel --remove ubuntu
 RUN rm -rf /home/ubuntu
 RUN useradd --create-home ${USER}
